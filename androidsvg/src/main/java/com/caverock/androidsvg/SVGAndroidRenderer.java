@@ -3244,6 +3244,9 @@ public class SVGAndroidRenderer
       for (SvgObject child: gradient.children)
       {
          Stop  stop = (Stop) child;
+         if (stop.offset == null) {
+            stop.offset = 0f;
+         }
          if (i == 0 || stop.offset >= lastOffset) {
             positions[i] = stop.offset;
             lastOffset = stop.offset;
